@@ -1,0 +1,27 @@
+﻿<Application x:Class="Designer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="\View\LoadWin.xaml"
+             xmlns:controller="clr-namespace:Designer.Controller"
+             xmlns:View="clr-namespace:Designer"
+             >
+    
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="\Custom\SARResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <controller:ItemController x:Key="ItemController"/>
+            <controller:OfferController x:Key="OfferController"/>
+            <controller:BarcodeController x:Key="BarcodeController"/>
+            <View:MainWindow x:Key="MainWindow"/>
+
+            <Style TargetType="Label" x:Key="ColumnLabel">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

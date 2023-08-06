@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Custom\ActionConfirmedDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\Combo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\CommandPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\DeleteDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\ErrorDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\Frame.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\Lista.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\LoginForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\PopUpOptions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\PrintingSettings.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\RecordStatusButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\RecordTracker.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\ReportViewer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\SearchBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\ViewCell.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Form.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ItemPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Custom\RoundButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\LangTab.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\LoadWin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\OfferPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Page1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PrinterTab.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Report.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Custom\ActionConfirmedDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\Combo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\CommandPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\DeleteDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\ErrorDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\Frame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\LoginForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\PasswordField.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\PrintingPDFDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\PrintingSettings.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\ReportViewer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\SARResources.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\Lista.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\PopUpOptions.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\RecordStatusButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\RecordTracker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\SearchBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\ViewCell.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\BarcodePanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Form.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ItemPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LangTab.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LoadWin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Custom\RoundButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\OfferPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Page1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PrinterTab.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Report.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
