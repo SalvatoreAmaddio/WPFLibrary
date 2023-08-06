@@ -1,0 +1,111 @@
+﻿<local:FormView x:Class="SARWPF.ReportViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:SARWPF" 
+             d:DataContext="{d:DesignInstance Type=local:ReportViewer}"
+             x:Name="ContentGrid" 
+             ShowRecordStatusButton="False"
+             ShowProgressBar="False"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <local:FormView.Resources>
+        <Style TargetType="Border" x:Key="ReportViewerBorderStle">
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+        </Style>
+
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Margin" Value="0,5,0,5"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0.3"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+
+        <Style TargetType="ListBox" x:Key="BookStyle">
+            <Setter Property="Background" Value="#F0F0F0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <Border x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="1" SnapsToDevicePixels="true">
+                            <ScrollViewer Focusable="false" Padding="{TemplateBinding Padding}">
+                                <Viewbox Width="{Binding BoxViewWidth}" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=DataContext}">
+                                    <ItemsPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Viewbox>
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </local:FormView.Resources>
+
+    <local:FormHeader Background="{StaticResource UsualBackgroundColor}" Padding="2">
+        <Border x:Name="ToolBarBorder">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="Image">
+                        <Setter Property="Height" Value="25"/>
+                    </Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </StackPanel.Resources>
+
+                <Button ToolTip="Settings" x:Name="SettingButton" Click="SettingButtonClicked">
+                    <Image Source="{StaticResource SettingIcon}"/>
+                </Button>
+
+                <Button x:Name="PrintButton" ToolTip="Print" Click="OnPrintClicked" Margin="10,0,0,0">
+                    <Image Source="{StaticResource PrinterIcon}"/>
+                </Button>
+                <local:Combo x:Name="PrinterComboBox" PlaceHolder="Select a printer..."  Margin="10,0,0,0" Width="170" SelectionChanged="PrinterSelected"/>
+                <RibbonSeparator Width="100" Visibility="Hidden"/>
+                
+                <Button x:Name="ZoomIn" Padding="2" ToolTip="Zoom in" Click="OnZoomInClicked" Margin="0,0,10,0">
+                    <Image Source="{StaticResource ZoomInIcon}"/>
+                </Button>
+                
+                <Button x:Name="ZoomOut" Padding="2" ToolTip="Zoom out" Click="ZoomOutClicked" Margin="0,0,10,0">
+                    <Image Source="{StaticResource ZoomOutIcon}"/>
+                </Button>
+                
+                <Button x:Name="Reset" Padding="2" ToolTip="Reset zoom" Click="ResetZoomClicked" Margin="0,0,10,0">
+                    <Image Source="{StaticResource ResetZoomIcon}"/>
+                </Button>
+            </StackPanel>
+        </Border>
+    </local:FormHeader>
+    
+    <local:FormContent>
+        <ListBox Grid.Row="1" x:Name="Book" 
+                 Style="{StaticResource BookStyle}" 
+                 ItemsSource="{Binding PagesSource}" 
+                 SelectedItem="{Binding SelectedPage}" 
+                 Background="White"
+                 ScrollViewer.CanContentScroll="True"/>
+    </local:FormContent>
+
+    <StackPanel x:Name="PageTrackerBorder" Orientation="Horizontal"  Background="{StaticResource UsualBackgroundColor}">
+            <Button x:Name="GoFirst" Content="{StaticResource First}" ToolTip="First Page" Click="FirstPageClicked"/>
+            <Button Content="{StaticResource Previous}" Click="PreviousPageClicked" ToolTip="Previous Page" Width="{Binding ElementName=GoFirst, Path=ActualWidth}"/>
+            
+            <Label x:Name="PageTrackerLabel" 
+                   Content="{Binding PageTracker,Mode=TwoWay}"
+                   Background="White" 
+                   VerticalContentAlignment="Center"
+                   />
+
+            <Button Content="{StaticResource Next}" Click="NextPageClicked" ToolTip="Next Page" Width="{Binding ElementName=GoFirst, Path=ActualWidth}"/>
+            <Button Content="{StaticResource Last}" ToolTip="Last Page" Click="LastPageClicked" Width="{Binding ElementName=GoFirst, Path=ActualWidth}"/>
+        </StackPanel>
+
+</local:FormView>

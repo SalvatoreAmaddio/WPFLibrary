@@ -1,0 +1,36 @@
+﻿<local:AbstractDialog 
+        x:Class="SARWPF.ActionConfirmedDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SARWPF"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Icon="{StaticResource LikeIcon}"
+        WindowStartupLocation="CenterScreen"
+        Title="Changes Applied" SizeToContent="WidthAndHeight">
+    
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        
+        <Image Source="{StaticResource LikeIcon}" Height="70"/>
+        
+        <TextBlock x:Name="MessageText" Grid.Column="2" VerticalAlignment="Center" FontSize="15" TextWrapping="Wrap">
+            Softwares'settings
+            <LineBreak/>
+            have been successfully applied!
+        </TextBlock>
+
+        <Button x:Name="OkButton" Grid.Row="2" Content="THANKS!" Grid.ColumnSpan="3" Click="CloseClick"/>
+    </Grid>
+</local:AbstractDialog>

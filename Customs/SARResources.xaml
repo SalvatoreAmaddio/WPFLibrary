@@ -1,0 +1,123 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clr="clr-namespace:System;assembly=mscorlib" 
+                    xmlns:local="clr-namespace:SARWPF">
+
+
+    <Style TargetType="Label" x:Key="HeaderLabel">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <BitmapImage x:Key="UserLogo" UriSource="pack://application:,,,/Custom/img/user.png" />
+
+    <BitmapImage x:Key="DefaultLogo" UriSource="pack://application:,,,/Custom/img/defaultlogo.png" />
+    <BitmapImage x:Key="DefaultIcon" UriSource="pack://application:,,,/Custom/img/defaulticon2.png" />
+    
+    <BitmapImage x:Key="LangIcon" UriSource="pack://application:,,,/Custom/img/currency.png" />
+    <BitmapImage x:Key="NoWifi" UriSource="pack://application:,,,/Custom/img/kyoz_no-wifi.png" />
+    
+    <BitmapImage x:Key="SaveIcon" UriSource="pack://application:,,,/Custom/img/save_blue.png"/>
+    <BitmapImage x:Key="DeleteIcon" UriSource="pack://application:,,,/Custom/img/delete.png"/>
+    <BitmapImage x:Key="OpenFolderIcon" UriSource="pack://application:,,,/Custom/img/openfolder.png"/>
+
+    <BitmapImage x:Key="ErrorIcon" UriSource="pack://application:,,,/Custom/img/close.png"/>
+
+    <BitmapImage x:Key="SettingIcon" UriSource="pack://application:,,,/Custom/img/setting.png"/>
+    <BitmapImage x:Key="CheckIcon" UriSource="pack://application:,,,/Custom/img/check.png"/>
+
+    <BitmapImage x:Key="WarningIcon" UriSource="pack://application:,,,/Custom/img/warning.png"/>
+    
+    <BitmapImage x:Key="QuestionMarkIcon" UriSource="pack://application:,,,/Custom/img/questionmark_blue.png"/>
+    
+    <BitmapImage x:Key="PDFPrinterIcon" UriSource="pack://application:,,,/Custom/img/pdf_printing.png"/>
+    
+    <BitmapImage x:Key="PDFIcon" UriSource="pack://application:,,,/Custom/img/PDF_icon.png"/>
+    <BitmapImage x:Key="ExcelIcon" UriSource="pack://application:,,,/Custom/img/excel.png"/>
+
+    <BitmapImage x:Key="ZoomInIcon" UriSource="pack://application:,,,/Custom/img/zoom_in_icon.png"/>
+    <BitmapImage x:Key="ZoomOutIcon" UriSource="pack://application:,,,/Custom/img/zoom_out_icon.png"/>
+    <BitmapImage x:Key="ResetZoomIcon" UriSource="pack://application:,,,/Custom/img/magnify.png"/>
+
+    <BitmapImage x:Key="DocIcon" UriSource="pack://application:,,,/Custom/img/doc_icon.png"/>
+
+    <BitmapImage x:Key="PrinterIcon" UriSource="pack://application:,,,/Custom/img/printing.png"/>
+
+    <BitmapImage x:Key="UnfilteredIcon" UriSource="pack://application:,,,/Custom/img/empty_filter.png" />
+    <BitmapImage x:Key="FilteredIcon" UriSource="pack://application:,,,/Custom/img/filter.png" />
+
+    <BitmapImage x:Key="LikeIcon" UriSource="pack://application:,,,/Custom/img/like.png" />
+
+    <SolidColorBrush x:Key="NiceBlue2" Color="#17A9FD"/>
+    <SolidColorBrush x:Key="NiceBlue" Color="#FF7EB4EA"/>
+    <SolidColorBrush x:Key="UsualBackgroundColor" Color="#FFF0F0F0"/>
+    
+    <clr:String x:Key="NewRecord">*</clr:String>
+
+    <clr:String x:Key="First">⮜⮜</clr:String>
+    <clr:String x:Key="Last">⮞⮞</clr:String>
+    <clr:String x:Key="Previous">⮜</clr:String>
+    <clr:String x:Key="Next">⮞</clr:String>
+
+    <clr:String x:Key="First1">◀◀</clr:String>
+    <clr:String x:Key="Last1">▶▶</clr:String>
+    <clr:String x:Key="Previous1">◀</clr:String>
+    
+<!--#region PasswordBox-->
+   
+    <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+    <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+    
+    <Style x:Key="PasswordFieldStyle" TargetType="{x:Type PasswordBox}">
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <ControlTemplate.Resources>
+                        <clr:String x:Key="PlaceHolder">Password...</clr:String>
+                    </ControlTemplate.Resources>
+
+                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="10">
+                        <local:ControlTemplateWrapperForPasswordBox>
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="4,0,0,0"/>
+                                <Label Content="{DynamicResource PlaceHolder}"
+                                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                       HorizontalContentAlignment="{TemplateBinding HorizontalAlignment}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       FontStyle="Italic"
+                                       FontStretch="{TemplateBinding FontStretch}"
+                                       />
+                                <local:RoundButton Content="X" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20" Visibility="Hidden"/>
+                            </Grid>
+                        </local:ControlTemplateWrapperForPasswordBox>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    
+    <clr:String x:Key="Next1">▶</clr:String>
+    <BitmapImage x:Key="Copy" UriSource="pack://application:,,,/Custom/img/copy.png" />
+    <BitmapImage x:Key="Cut" UriSource="pack://application:,,,/Custom/img/cut.ico" />
+    <BitmapImage x:Key="Paste" UriSource="pack://application:,,,/Custom/img/paste.png" />
+    <BitmapImage x:Key="Selection" UriSource="pack://application:,,,/Custom/img/selection.png" />
+    <BitmapImage x:Key="UndoRes" UriSource="pack://application:,,,/Custom/img/undo.png" />
+    <BitmapImage x:Key="Redo" UriSource="pack://application:,,,/Custom/img/redo.png" />
+    <BitmapImage x:Key="CopyAll" UriSource="pack://application:,,,/Custom/img/CopyAll.png" />
+
+</ResourceDictionary>

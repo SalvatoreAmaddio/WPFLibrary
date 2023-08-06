@@ -1,0 +1,33 @@
+﻿<Grid x:Class="SARWPF.PopUpOptions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+      >
+
+    <ToggleButton x:Name="TogglePopupButton" BorderThickness="0" Background="Transparent" ToolTip="Filter">
+        <Grid>
+            <Image Source="{StaticResource UnfilteredIcon}" Width="30" Height="30" x:Name="FilterImage"/>
+            <Viewbox x:Name="ViewBoxContainer" Visibility="Hidden" Width="12" Height="12" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Grid Width="12" Height="12">
+                    <Ellipse
+                    Width="12"
+                    Height="12"
+                    Fill="Red"
+                    Stroke="Black"
+                    >
+                    </Ellipse>
+                    <TextBlock x:Name="OptionCount" Foreground="Yellow" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </Viewbox>
+        </Grid>
+    </ToggleButton>
+
+    <Popup x:Name="MyPopUp" 
+        PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}"
+        StaysOpen="False" AllowsTransparency="True" Placement="Bottom">
+        <Border x:Name="OptionBorder" Background="White" BorderThickness="1" BorderBrush="Black" CornerRadius="10" Padding="10"/>
+    </Popup>
+
+</Grid>

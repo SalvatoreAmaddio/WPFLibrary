@@ -1,0 +1,42 @@
+﻿<local:AbstractDialog x:Class="SARWPF.PrintingPDFDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SARWPF"
+        mc:Ignorable="d"
+        Title="Printing" 
+        Icon="{StaticResource PDFIcon}"
+        Height="200" Width="450"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        >
+
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="{StaticResource PDFPrinterIcon}" 
+               VerticalAlignment="Center"
+               Grid.Row="0" 
+               Margin="0,10,0,10"
+               />
+        
+        <ProgressBar Grid.Row="1" 
+                     Minimum="0" 
+                     x:Name="Pb"
+                     Maximum="100" 
+                     Value="0"
+                     />
+
+        <Label x:Name="ProgressText" Grid.Row="1" 
+               Content="(Printing cannot be stopped now)" 
+               HorizontalContentAlignment="Center" 
+               VerticalContentAlignment="Center"
+               Visibility="Hidden"
+               Foreground="Red" FontWeight="Bold"/>
+    </Grid>
+</local:AbstractDialog>

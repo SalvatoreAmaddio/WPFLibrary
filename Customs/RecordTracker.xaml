@@ -1,0 +1,23 @@
+﻿<StackPanel x:Class="SARWPF.RecordTracker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             Background="{StaticResource UsualBackgroundColor}"
+             Orientation="Horizontal"
+            >
+    <Button Content="{StaticResource First}" ToolTip="Go to first record" x:Name="GoFirst"/>
+    <Button Content="{StaticResource Previous}" ToolTip="Go to previous record" x:Name="GoPrevious" Width="{Binding ElementName=GoFirst, Path=ActualWidth}"/>
+    <Label Background="White" VerticalContentAlignment="Center" x:Name="RecordIndicator"/>
+    <Button Content="{StaticResource Next}" ToolTip="Go to next record" x:Name="GoNext" Width="{Binding ElementName=GoFirst, Path=ActualWidth}"/>
+    <Button Content="{StaticResource Last}" ToolTip="Go to last record" x:Name="GoLast" Width="{Binding ElementName=GoFirst, Path=ActualWidth}"/>
+    <RibbonSeparator Width="{Binding ElementName=GoFirst, Path=ActualWidth}"/>
+    <Button Content="{StaticResource NewRecord}" x:Name="GoNew" 
+            HorizontalContentAlignment="Center"
+            Padding="0"
+            ToolTip="Go to new record"
+            FontWeight="ExtraBold"
+            Width="{Binding ElementName=GoFirst, Path=ActualWidth}"
+            />
+</StackPanel>
